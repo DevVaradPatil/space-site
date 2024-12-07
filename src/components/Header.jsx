@@ -27,10 +27,11 @@ const Header = () => {
   };
   return (
     <div
-      className="w-full min-h-screen flex flex-col justify-center items-center bg-neutral-950 relative overflow-hidden"
+      className="w-full flex flex-col justify-center items-center bg-neutral-950 relative overflow-hidden"
       style={{
         background:
           "radial-gradient(circle, rgba(0,0,0,0.9) 20%, rgba(0,0,0,1) 100%)",
+        minHeight: "100dvh",
       }}
       id="home"
     >

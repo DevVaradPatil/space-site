@@ -12,7 +12,7 @@ const Scene = () => {
     },
   };
   return (
-    <div className='w-full h-screen justify-center flex items-center px-20'>
+    <div className='w-full h-screen justify-center flex items-center px-0 md:px-20'>
       <Lottie options={defaultOptions} />
     </div>
   )

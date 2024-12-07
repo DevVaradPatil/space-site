@@ -28,7 +28,7 @@ const GoToTopButton = () => {
     <>
       {isVisible && (
         <motion.button
-          className="fixed bottom-8 right-8 p-3 bg-transparent text-white border-2 border-white rounded-full shadow-md hover:bg-neutral-800 hover:scale-105 transition-all duration-300 transform"
+          className="fixed bottom-8 right-8 p-3 bg-transparent text-white border-2 border-white rounded-full shadow-md hover:bg-neutral-800 hover:scale-105 transition-all duration-300 transform z-50"
           onClick={scrollToTop}
         >
           <IoMdRocket size={24} />
