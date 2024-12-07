@@ -33,7 +33,7 @@ const Contact = () => {
 
             <div className="flex items-center space-x-4 hover:scale-105 transform transition-transform duration-300">
               <FaEnvelope className="text-accent text-3xl hover:text-white" />
-              <p className="text-lg">contact@spaceclub.com</p>
+              <p className="text-lg">contact@stellarexplorers.com</p>
             </div>
 
             <div className="flex items-center space-x-4 hover:scale-105 transform transition-transform duration-300">

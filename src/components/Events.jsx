@@ -7,7 +7,7 @@ import rocket from '../assets/rocket.png'
 const Events = () => {
   return (
     <div
-      className="w-full flex justify-evenly items-center py-20 bg-neutral-900"
+      className="w-full flex flex-wrap gap-10 justify-evenly items-center py-20 bg-neutral-900"
       style={{
         backgroundImage: "url('https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')", // Update the path
         backgroundAttachment: 'fixed',

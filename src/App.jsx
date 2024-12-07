@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Team from "./components/Team";
 import Scene from "./components/Scene";
 import BottomBar from "./components/BottomBar";
+import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

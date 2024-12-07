@@ -39,14 +39,22 @@ const Header = () => {
 
       <div className="w-full h-full flex flex-col items-center justify-center text-center">
         <HyperText
-          className="text-7xl font-semibold font-orbitron text-neutral-100 tracking-widest"
+          className="text-7xl hidden md:flex font-semibold font-orbitron text-neutral-100 tracking-widest"
           text="Beyond Horizons"
+        />
+        <HyperText
+          className="text-5xl md:hidden font-semibold font-orbitron text-neutral-100 tracking-widest"
+          text="Beyond"
+        />
+        <HyperText
+          className="text-5xl md:hidden font-semibold font-orbitron text-neutral-100 tracking-widest"
+          text="Horizons"
         />
         <motion.p
           variants={textVariant}
           initial="hidden"
           animate="visible"
-          className="text-2xl text-tertiary mt-5"
+          className="text-lg md:text-2xl text-tertiary mt-5"
         >
           Where curiosity meets the cosmos, and dreams turn into discoveries.
         </motion.p>
@@ -56,7 +64,7 @@ const Header = () => {
         variants={cardVariant("left")}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-10 left-5"
+        className="absolute bottom-10 left-5 hidden md:flex"
       >
         <Lottie options={defaultOptions} width={300} />
       </motion.div>
@@ -64,7 +72,7 @@ const Header = () => {
       variants={cardVariant("right")}
       initial="hidden"
       animate="visible"
-      className="absolute bottom-10 right-5">
+      className="absolute bottom-10 right-5 hidden md:flex">
         <Lottie options={defaultOptions2} width={300} />
       </motion.div>
 

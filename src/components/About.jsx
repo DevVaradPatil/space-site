@@ -5,10 +5,10 @@ import { cardVariant, textVariant } from "../lib/variants";
 const About = () => {
   return (
     <div
-      className="w-full flex justify-between items-center px-20 py-20 bg-neutral-950 gap-10 overflow-x-hidden"
+      className="w-full flex flex-col md:flex-row justify-between items-center px-5 md:px-20 py-20 bg-neutral-950 gap-10 overflow-x-hidden"
       id="about"
     >
-      <div className="text-left text-tertiary w-[60%]">
+      <div className="text-left text-tertiary w-full md:w-[60%]">
         {/* Text content with animation on scroll into view */}
         <motion.div
           variants={textVariant}
@@ -16,8 +16,8 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of the element is visible
         >
-          <h1 className="text-4xl font-orbitron font-bold text-white">About Us</h1>
-          <p className="mt-4 text-lg">
+          <h1 className="text-4xl text-center md:text-left font-orbitron font-bold text-white">About Us</h1>
+          <p className="mt-4 text-base  md:text-lg">
             At Stellar Explorers, we are a passionate team of space enthusiasts,
             dreamers, and innovators, united by a common goal: to explore the
             wonders of the cosmos. Our mission is to inspire curiosity and spark
