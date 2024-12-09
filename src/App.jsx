@@ -1,41 +1,19 @@
 import React, { useEffect, useState } from "react";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Events from "./components/Events";
-import GoToTopButton from "./components/GoToTopButton";
-import Header from "./components/Header";
-import Team from "./components/Team";
-import Scene from "./components/Scene";
-import BottomBar from "./components/BottomBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Admin from "./components/Admin";
+import Home from "./components/Home";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3300);
-  }, []);
 
   return (
-    <div className="font-sans">
-      {isLoading ? (
-        <div className="flex items-center justify-center h-screen bg-black text-white" style={{ pointerEvents: "none" }}>
-          <Scene />
-        </div>
-      ) : (
-        <>
-          <Header />
-          <About />
-          <Events />
-          <Team />
-          <Contact />
-          <BottomBar />
-          <GoToTopButton />
-        </>
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </Router>
   );
 }
 

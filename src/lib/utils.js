@@ -1,9 +1,6 @@
-/**
- * Utility function to concatenate class names conditionally.
- * @param  {...(string | undefined | null | boolean)} classes - Class names or conditional expressions.
- * @returns {string} - Concatenated class names.
- */
-export function cn(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
-  
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
