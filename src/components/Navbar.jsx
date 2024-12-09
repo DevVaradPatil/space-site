@@ -18,7 +18,6 @@ const Navbar = () => {
                 <a href='#activity' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Activities</a>
                 <a href='#team' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Team</a>
                 <a href='#contact' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Contact</a>
-                <Link to='/admin' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Admin</Link>
             </div>
             <div className='md:hidden'>
                 <button onClick={() => setIsOpen(!isOpen)} className='text-neutral-100 focus:outline-none'>
