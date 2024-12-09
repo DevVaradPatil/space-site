@@ -81,6 +81,14 @@ const Admin = () => {
     fetchData();
   };
 
+  const handleLogin = () => {
+    if (password === "spaceforce") {
+      setIsAuthorized(true);
+    } else {
+      toast.error("Incorrect password!");
+    }
+  };
+
   return (
     <div className="bg-neutral-900 text-white min-h-screen p-6">
       <Toaster />
@@ -94,16 +102,11 @@ const Admin = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
+              onKeyPress={(e) => e.key === "Enter" && handleLogin()}
               className="p-2 rounded w-full mb-2 bg-neutral-800 text-white"
             />
             <button
-              onClick={() => {
-                if (password === "spaceforce") {
-                  setIsAuthorized(true);
-                } else {
-                  toast.error("Incorrect password!");
-                }
-              }}
+              onClick={handleLogin}
               className="p-2 w-full bg-blue-600 rounded hover:bg-blue-700"
             >
               Login
@@ -166,7 +169,7 @@ const Admin = () => {
 
           <div>
             <h2 className="text-xl font-semibold">Team</h2>
-            <div className="flex w-full justify-start items-center gap-10 mt-2">
+            <div className="flex flex-wrap w-full justify-start items-center gap-10 mt-2">
               {team.map(({ id, name, role, image }) => (
                 <div
                   key={id}
