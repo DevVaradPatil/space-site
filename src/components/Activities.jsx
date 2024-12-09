@@ -37,7 +37,7 @@ const Activities = () => {
   return (
     <div
       className="w-full flex flex-col items-center px-3 md:px-20 py-10 bg-neutral-900 gap-10 relative overflow-hidden"
-      id="team"
+      id="activity"
     >
       <h1 className="text-4xl font-orbitron font-bold text-white mb-0 text-center">
         Our Activities

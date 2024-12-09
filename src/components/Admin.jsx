@@ -22,7 +22,6 @@ const Admin = () => {
     image: "", // Image URL
     type: "team",
   });
-
   const fetchData = async () => {
     const teamSnapshot = await getDocs(collection(db, "team"));
     const activitiesSnapshot = await getDocs(collection(db, "activities"));
@@ -99,7 +98,7 @@ const Admin = () => {
             />
             <button
               onClick={() => {
-                if (password === "spaceislife") {
+                if (password === "spaceforce") {
                   setIsAuthorized(true);
                 } else {
                   toast.error("Incorrect password!");
