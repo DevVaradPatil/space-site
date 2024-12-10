@@ -20,23 +20,7 @@ const About = () => {
             About Us
           </h1>
           <p className="mt-4 text-base md:text-lg text-justify">
-            At Stellar Explorers, we are a passionate team of space enthusiasts,
-            dreamers, and innovators, united by a common goal: to explore the
-            wonders of the cosmos. Our mission is to inspire curiosity and spark
-            imagination by bringing the mysteries of space closer to home.
-            Through cutting-edge research, educational outreach, and
-            collaboration with leading scientists and engineers, we aim to
-            foster a deeper understanding of the universe. <br />
-            Founded by a group of visionary thinkers, Stellar Explorers began as
-            a humble club dedicated to learning about the vastness of space.
-            Today, we have grown into a thriving community of students,
-            professionals, and space aficionados working together to unlock the
-            secrets of the stars. <br />
-            Whether it's observing distant galaxies through powerful telescopes,
-            building innovative space technology, or simply discussing the
-            latest space discoveries, we are driven by our fascination with the
-            final frontier. Join us on our journey, and together, let's push the
-            boundaries of human knowledge.
+          The GGU Rocket Club is a vibrant initiative aimed at empowering students with hands-on experience in model rocketry and satellite technology while fostering innovation and collaboration. Guided by its vision to inspire future space enthusiasts, the club provides opportunities to design, build, and launch model rockets and satellites, focusing on real-world applications such as environmental data collection and project monitoring through satellite imagery. With a mission to bridge academic learning and practical skills, the club serves as a launchpad for students to explore the exciting realms of aerospace and contribute to solving global challenges.
           </p>
         </motion.div>
       </div>
