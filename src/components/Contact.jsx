@@ -37,32 +37,32 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="flex items-center space-x-4 hover:scale-105 transform transition-transform duration-300">
-              <FaMapMarkerAlt className="text-accent text-3xl hover:text-white" />
-              <p className="text-lg">
+            <div className="flex items-center space-x-4 hover:text-neutral-200 transition-all  duration-300">
+              <FaMapMarkerAlt className="text-accent text-3xl hover:text-neutral-200" />
+              <p className="text-lg hover:text-neutral-300 w-full">
                 Rocket Club Godavari Global University NH-16, Chaitanya
                 Knowledge City, Rajahmundry, 533296 East Godavari, Andhra
                 Pradesh, INDIA
               </p>
             </div>
 
-            <div className="flex items-center space-x-4 hover:scale-105 transform transition-transform duration-300">
+            <div className="flex items-center space-x-4 hover:text-neutral-200 transition-all  duration-300">
               <a
                 href="mailto:rocketclub@ggu.edu.in"
                 className="flex items-center space-x-4"
               >
-                <FaEnvelope className="text-accent text-3xl hover:text-white" />
-                <p className="text-lg">rocketclub@ggu.edu.in</p>
+                <FaEnvelope className="text-accent text-3xl hover:text-neutral-200" />
+                <p className="text-lg hover:text-neutral-300">rocketclub@ggu.edu.in</p>
               </a>
             </div>
 
-            <div className="flex items-center space-x-4 hover:scale-105 transform transition-transform duration-300">
+            <div className="flex items-center space-x-4 hover:text-neutral-200 transition-all duration-300">
               <a
                 href="tel:+919492143415"
                 className="flex items-center space-x-4"
               >
-                <FaPhoneAlt className="text-accent text-3xl hover:text-white" />
-                <p className="text-lg">+919492143415</p>
+                <FaPhoneAlt className="text-accent text-3xl hover:text-neutral-200" />
+                <p className="text-lg hover:text-neutral-300">+919492143415</p>
               </a>
             </div>
           </motion.div>

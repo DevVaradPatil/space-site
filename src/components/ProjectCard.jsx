@@ -21,6 +21,7 @@ const ProjectCard = ({ name, description, image }) => {
         <CardItem translateZ="100" className="w-full mt-4">
           <img
             src={image}
+            loading='lazy'
             className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-md"
             alt="thumbnail"
           />

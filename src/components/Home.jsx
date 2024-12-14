@@ -8,6 +8,9 @@ import Team from "./Team";
 import Contact from "./Contact";
 import BottomBar from "./BottomBar";
 import GoToTopButton from "./GoToTopButton";
+import Heroes from "./Heroes";
+import Inspiration from "./Inspiration";
+import Showcase from "./Showcase";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +34,9 @@ function Home() {
           <Events />
           <Activities />
           <Team />
+          <Heroes />
+          <Inspiration />
+          <Showcase />
           <Contact />
           <BottomBar />
           <GoToTopButton />
