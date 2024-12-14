@@ -5,7 +5,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='w-full py-4 flex fixed bg-transparent backdrop-blur-md z-50 top-0 left-0 justify-between md:justify-center items-center px-4 md:px-8'>
+        <div className='w-full py-4 flex fixed bg-transparent backdrop-blur-md z-[1000] top-0 left-0 justify-between md:justify-center items-center px-4 md:px-8'>
             <div className='hidden md:flex absolute left-5 top-4 w-10'>
                 <img src={logo} alt="Stellar Explorers" />
             </div>
@@ -18,6 +18,8 @@ const Navbar = () => {
                 <a href='#activity' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Activities</a>
                 <a href='#team' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Team</a>
                 <a href='#contact' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Contact</a>
+                <a href='#heroes' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Our Heroes</a>
+                <a href='#inspiration' className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Our Inspiration</a>
             </div>
             <div className='md:hidden'>
                 <button onClick={() => setIsOpen(!isOpen)} className='text-neutral-100 focus:outline-none'>
@@ -33,6 +35,8 @@ const Navbar = () => {
                     <a href='#activity' onClick={()=>setIsOpen(false)} className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Activities</a>
                     <a href='#team' onClick={()=>setIsOpen(false)} className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Team</a>
                     <a href='#contact' onClick={()=>setIsOpen(false)} className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Contact</a>
+                    <a href='#heroes' onClick={()=>setIsOpen(false)} className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Our Heroes</a>
+                    <a href='#inspiration' onClick={()=>setIsOpen(false)} className='text-neutral-100 font-orbitron hover:text-secondary transition duration-200 transform hover:scale-110'>Our Inspiration</a>
                 </div>
             )}
         </div>

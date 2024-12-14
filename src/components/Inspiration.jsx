@@ -32,7 +32,7 @@ const Inspiration = () => {
   return (
     <div
       className="w-full flex flex-col items-center px-20 py-10 bg-neutral-900 gap-10 relative overflow-hidden"
-      id="heroes"
+      id="inspiration"
     >
       <h1 className="text-4xl font-orbitron font-bold text-white text-center">
         Our Inspiration
