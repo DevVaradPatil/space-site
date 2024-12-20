@@ -41,15 +41,15 @@ const Header = () => {
       <div className="w-full h-full flex flex-col items-center justify-center text-center">
         <HyperText
           className="text-7xl hidden md:flex font-semibold font-orbitron text-neutral-100 tracking-widest"
-          text="Beyond Horizons"
+          text="Gagan - GGU"
         />
         <HyperText
           className="text-5xl md:hidden font-semibold font-orbitron text-neutral-100 tracking-widest"
-          text="Beyond"
+          text="Gagan"
         />
         <HyperText
           className="text-5xl md:hidden font-semibold font-orbitron text-neutral-100 tracking-widest"
-          text="Horizons"
+          text="GGU"
         />
         <motion.p
           variants={textVariant}

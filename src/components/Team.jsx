@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { db } from "../../firebase"; // Import your Firebase configuration
 import { collection, getDocs } from "firebase/firestore";
+import profile from "../assets/profile.png"
 
 const Team = () => {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -59,7 +60,7 @@ const Team = () => {
           >
             <div className="w-32 h-32 overflow-hidden rounded-full mb-4 relative group">
               <img
-                src={member.image}
+                src={profile}
                 alt={member.name}
                 className="w-full h-full object-cover rounded-full shadow-xl border-4 border-accent transition-all duration-300 group-hover:border-4 group-hover:border-accent group-hover:scale-110"
               />
