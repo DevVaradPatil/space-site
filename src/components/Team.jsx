@@ -16,7 +16,7 @@ const Team = () => {
         const teamData = teamSnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        }));
+        })).sort((a, b) => a.index - b.index); // Sort by index attribute
         setTeamMembers(teamData);
         setLoading(false);
       } catch (error) {
@@ -66,7 +66,7 @@ const Team = () => {
               <div className="absolute inset-0 rounded-full border-2 border-accent opacity-60 group-hover:opacity-100 group-hover:animate-pulse" />
             </div>
 
-            <h2 className="text-xl font-bold text-white mb-2 transition-all duration-300 group-hover:text-accent">
+            <h2 className="text-xl text-center font-bold text-white mb-2 transition-all duration-300 group-hover:text-accent">
               {member.name}
             </h2>
             <p className="text-tertiary text-sm transition-all duration-300 group-hover:text-accent">

@@ -11,6 +11,7 @@ import GoToTopButton from "./GoToTopButton";
 import Heroes from "./Heroes";
 import Inspiration from "./Inspiration";
 import Showcase from "./Showcase";
+import Students from "./Students";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +35,7 @@ function Home() {
           <Events />
           <Activities />
           <Team />
+          <Students />
           <Heroes />
           <Inspiration />
           <Showcase />
