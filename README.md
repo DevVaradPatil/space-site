@@ -1,8 +1,40 @@
-# React + Vite
+# Rocket Club | Godavari Global University
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website for the GGU Rocket Club, a student club that gives members hands-on experience in
+model rocketry, satellite technology and space innovation.
 
-Currently, two official plugins are available:
+**Live:** [stellar-explorers.vercel.app](https://stellar-explorers.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- 3D hero with Spline / React Three Fiber scenes and a meteor-shower background
+- About, Inspiration, Showcase of student projects, Events, and stat counters
+- **Team** and **Activities** sections loaded live from Firestore
+- Animated testimonials, 3D tilt cards and hyper-text effects
+- **Admin page** (`/admin`) for adding and editing team members and activities without a redeploy
+- Contact section with toast feedback
+
+## Tech stack
+
+React · Vite · Tailwind CSS · Three.js (React Three Fiber, Drei) · Spline · Framer Motion ·
+Firebase (Firestore) · Lottie · Number Flow · React Router · Vercel
+
+## Project structure
+
+```
+src/
+  components/      page sections (Heroes, About, Showcase, Events, Team, Activities, Contact, Admin)
+  components/ui/   3D card, animated testimonials, meteors, hyper-text
+  data/            static project data
+firebase.js        Firebase config
+vercel.json        SPA rewrites
+```
+
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+Team and activity content lives in the Firestore `team` and `activities` collections.
