@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase";
 import {
   collection,
   addDoc,
   deleteDoc,
   doc,
+  getDoc,
   getDocs,
 } from "firebase/firestore";
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import { Toaster, toast } from "react-hot-toast";
 import ProjectCard from "./ProjectCard";
 
+// Admin access = a Firebase Auth account whose uid has a doc in the `admins`
+// collection. firestore.rules enforces the same check on every write.
 const Admin = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const [checking, setChecking] = useState(true);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [team, setTeam] = useState([]);
   const [activities, setActivities] = useState([]);
@@ -30,6 +40,27 @@ const Admin = () => {
       activitiesSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
     );
   };
+
+  useEffect(
+    () =>
+      onAuthStateChanged(auth, async (user) => {
+        let admin = false;
+        if (user) {
+          try {
+            admin = (await getDoc(doc(db, "admins", user.uid))).exists();
+          } catch {
+            admin = false;
+          }
+          if (!admin) {
+            toast.error("This account is not an admin.");
+            await signOut(auth);
+          }
+        }
+        setIsAuthorized(admin);
+        setChecking(false);
+      }),
+    []
+  );
 
   useEffect(() => {
     if (isAuthorized) {
@@ -81,11 +112,12 @@ const Admin = () => {
     fetchData();
   };
 
-  const handleLogin = () => {
-    if (password === "spaceforce") {
-      setIsAuthorized(true);
-    } else {
-      toast.error("Incorrect password!");
+  const handleLogin = async () => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setPassword("");
+    } catch {
+      toast.error("Incorrect email or password!");
     }
   };
 
@@ -93,15 +125,24 @@ const Admin = () => {
     <div className="bg-neutral-900 text-white min-h-screen p-6">
       <Toaster />
 
-      {!isAuthorized ? (
+      {checking ? null : !isAuthorized ? (
         <div className="w-full h-[90vh] justify-center items-center flex flex-col">
           <div className="max-w-lg bg-neutral-700 p-4 rounded-xl">
             <h1 className="text-2xl text-center font-bold mb-4">Admin Panel</h1>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              autoComplete="username"
+              className="p-2 rounded w-full mb-2 bg-neutral-800 text-white"
+            />
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
+              autoComplete="current-password"
               onKeyPress={(e) => e.key === "Enter" && handleLogin()}
               className="p-2 rounded w-full mb-2 bg-neutral-800 text-white"
             />
@@ -115,7 +156,15 @@ const Admin = () => {
         </div>
       ) : (
         <>
-          <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-2xl font-bold">Admin Panel</h1>
+            <button
+              onClick={() => signOut(auth)}
+              className="p-2 bg-neutral-700 rounded hover:bg-neutral-600"
+            >
+              Sign out
+            </button>
+          </div>
           <div className="mb-6">
             <h2 className="text-xl font-semibold">Add New</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
